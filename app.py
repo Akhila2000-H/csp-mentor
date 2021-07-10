@@ -205,7 +205,7 @@ def project():
                         conn4 = MySQLdb.connect(host="185.28.21.1", user="u320202036_student", password="Conzura9346@",
                                                database="u320202036_student", port=3306)
                         cu=conn4.cursor()
-                        cu.execute("""update team_manage set link="<a target='_blank'>{}</a>" where teamname='{}'""".format(url,teamn))
+                        cu.execute("update team_manage set link='{}' where teamname='{}'".format(url,teamn))
                         conn4.commit()
 
             return render_template('project.html',link=url)
